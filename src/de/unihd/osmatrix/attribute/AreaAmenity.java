@@ -40,7 +40,7 @@ public class AreaAmenity extends Attribute{
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return "The area covered by amenities (community facilities such as Schools, Hospitals, Pharmacies etc.) given in square meters.";
+		return "The area covered by amenity=all (community facilities such as Schools, Hospitals, Pharmacies etc.) given in square meters.";
 	}
 
 	/* (non-Javadoc)

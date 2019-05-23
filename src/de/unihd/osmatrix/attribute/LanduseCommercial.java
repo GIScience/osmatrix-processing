@@ -40,7 +40,7 @@ public class LanduseCommercial extends Attribute {
 	@Override
 	public String getDescription() {
 		
-		return "The area covered by commercial zones given in square meters.";
+		return "The area covered by landuse=commercial given in square meters.";
 	}
 
 	/* (non-Javadoc)
