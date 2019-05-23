@@ -63,10 +63,10 @@
 
 + Using osm2pgsql tool
     * osm2pgsql -d databasename -U username -W --hstore-all --style --extra-attributes -C --number-processes input-file
-    * osm2pgsql -d osmatrix3000 -U osmatrix -W --hstore-all --style /usr/share/osm2pgsql/default.style --extra-attributes -C 36000 --number-processes 11 /data/OSMatrix/Europe_ts/2006-01-01.pbf
+    * osm2pgsql -d osmatrix-DB -U osmatrix -W --hstore-all --style /usr/share/osm2pgsql/default.style --extra-attributes -C 36000 --number-processes 11 /data/OSMatrix/Europe_ts/2006-01-01.pbf
 
 #### 5. Processing
 
 + Use an executable jar file build from this project (https://gitlab.com/giscience/osmatrix_processing/) with the neccessary attributes
     * java -server -Xms -jar [.jar-file] -oh [host-name] -od [database-name] -ou [username] -op [‘password’] -t -c -f -v [version number, the number to put here is the number of available timestamps + 1] -ts "YYYY-MM-DD HH:MM:SS"
-    * java -server -Xms32000m -jar osmatrix_processing_2016-09-16.jar -oh server.name.something.de:5432 -od osmatrix3000 -ou osmatrix -op '' -t 10 -c 1000 -f 1000 -v 1 -ts "2006-01-01 00:00:00"
+    * java -server -Xms32000m -jar osmatrix_processing_2016-09-16.jar -oh server.name.something.de:5432 -od osmatrix-DB -ou osmatrix -op '' -t 10 -c 1000 -f 1000 -v 1 -ts "2006-01-01 00:00:00"
