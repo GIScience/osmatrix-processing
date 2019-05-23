@@ -1,0 +1,1 @@
+-oh <server-ip>:<port> -od <osmatrix-database> -ou <user> -op <password> -t 10 -c100 -f 100 -v 1

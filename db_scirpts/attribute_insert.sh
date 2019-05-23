@@ -1,0 +1,30 @@
+#Trigger
+echo "/*";
+echo "* AUTO GENERATED TRIGGER FUNCTION";
+echo "*/";
+echo "";
+echo "CREATE OR REPLACE FUNCTION attribute_insert()"
+echo "RETURNS TRIGGER AS \$\$"
+echo " DECLARE"
+echo "	var_curs1 refcursor;"
+echo "	cell RECORD;"
+echo ""
+echo "BEGIN"
+echo "	OPEN var_curs1 FOR EXECUTE 'select * from '||TG_TABLE_NAME||"
+echo "				' where cell_id = '||NEW.cell_id||"
+echo "			' and attribute_type_id = '|| NEW.attribute_type_id||"
+echo "				' and value = '||NEW.value||"
+echo "				' and expired is null ';"
+echo "	FETCH var_curs1 INTO cell;"
+echo "	IF NOT FOUND THEN"
+echo "	  EXECUTE 'update '||TG_TABLE_NAME||' set expired = '||NEW.valid||"
+echo "		' where cell_id = '||NEW.cell_id||"
+echo "		' and attribute_type_id = '||NEW.attribute_type_id||"
+echo "		' and expired is null';"
+echo "	  RETURN NEW;"
+echo "	END IF;"
+echo "	RETURN NULL;"
+echo "END;"
+echo "\$\$"
+echo "LANGUAGE plpgsql;"
+echo ""
