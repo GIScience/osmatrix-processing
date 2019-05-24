@@ -39,7 +39,6 @@
             * osmium-tool-1.3.1/build/osmium time-filter extracted_regions/europe.pbf 2006-01-01T00:00:00Z -o europe_ts/2006-01-01.pbf
 
 #### Note:
-
 ##### (Convert files in case if you already have osm or osm.bz2 file formats or want to work with them instead of pbf) 
 
 + All timestamps need to convert from .pbf to .osm or .osm.bz2 format if extracted as pbf files using OSMConvert tool. 
